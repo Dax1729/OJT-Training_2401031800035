@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hello, World!</title>
+  <style>
+    header {
+      background-color:black;
+      color: white;
+      text-align: center;
+      padding-top: 10px;
+      font-family: sans-serif;
+    }
+
+    nav {
+      margin: 15px;
+      padding: 10px;
+      text-align: center;
+      /* font-family: sans-serif; */
+    }
+
+    nav a {
+      padding: 10px;
+      font-family: sans-serif;
+    }
+    .button{
+      padding: 2px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Ecommerce Website</h1>
+    <div class="Navigation">
+      <nav>
+        <!-- <a href="#">Home</a>
+        <a href="#">Account</a>
+        <a href="#">About</a>
+        <a href="#">log in</a> -->
+        <button class="button">Home</button>
+        <button class="button">About</button>
+        <button class="button">Account</button>
+        <button class="button">log in</button>
+      </nav>
+    </div>
+  </header>
+</body>
+
+</html>
