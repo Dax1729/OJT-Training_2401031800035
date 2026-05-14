@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ecommerce Website</title>
+  <style>
+    .navbar {
+      padding: 15px 40px;
+      background-color: rgb(76, 231, 76);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      margin: 15px;
+      padding: 10px;
+      text-align: center;
+      /* font-family: sans-serif; */
+    }
+
+    nav a {
+      padding: 10px;
+      font-family: sans-serif;
+      color: black;
+      text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .button {
+      padding: 2px;
+      margin: 10px;
+    }
+
+    .icons button {
+      margin-left: 15px;
+      color: rgb(255, 255, 255);
+      background-color: rgb(72, 0, 255);
+    }
+
+    .background img {
+      width: 100%;
+      height: auto;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      color: black;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      background-image: url('file:///D:/Downloads/grid.avif');
+      background-size: cover;
+      padding: 40px 20px;
+      border-radius: 20px;
+      margin: 10px 50px 10px 50px;
+      background-color: rgb(236, 234, 234);
+    }
+
+    body {
+      background-color: rgb(255, 255, 255);
+    }
+
+    .img {
+      width: 100px;
+      height: auto;
+      margin: 20px 0;
+      margin-left: 45%;
+    }
+
+    .intro {
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .shop-btn {
+      display: block;
+      margin-left: 45%;
+      padding: 10px 20px;
+      background-color: rgb(72, 0, 255);
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .b1 {
+      padding: 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .tb {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+      background-color: rgb(76, 231, 76);
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /*.best-seller {
+      background-color: rgb(236, 234, 234);
+      padding: 20px;
+      margin: 10px 50px 10px 50px;
+      border-radius: 20px;
+      display: flexbox;
+    }*/
+
+    .best-sellers {
+      padding: 20px;
+      background: #f9f9f9;
+      text-align: center;
+      margin: 10px 50px 10px 50px;
+      border-radius: 20px;
+    }
+
+    .best-sellers h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    /* Horizontal slider container */
+    .horizontal-slider {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
+    }
+
+    .horizontal-slider::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .horizontal-slider::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    .product-card {
+      flex: 0 0 auto;
+      /* prevent shrinking */
+      width: 220px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+    .icons a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Ecommerce Website</div>
+    <nav>
+      <ul>
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Mobile</a></li>
+        <li><a href="#">Smart Home</a></li>
+        <li><a href="#">Audio</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <!-- <a href="#">Login</a>
+      <a href="#">Cart (0)</a> -->
+      <a href="login.html">
+        <button>Login</button>
+      </a>
+      <button>Cart</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- <div class="background">
+      <img src="d:\Downloads\grid.avif" alt="">
+    </div> -->
+    <img src="d:\Downloads\Drums Pro Wireless On-Ear Headphones_mp4.avif" alt="" class="img">
+    <div class="intro">
+      <h1>Smart Gear. Smarter Prices.</h1>
+      <p>Experience Top-Notch Service and Results with a Team You Can Rely On</p>
+    </div>
+    <button class="shop-btn">Shop Now</button>
+  </div>
+
+  <section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="horizontal-slider">
+
+      <div class="product-card">
+        <img src="d:\Downloads\c837a6_7d442e9a36a64147b128a5f87c82bd95~mv2.avif" alt="FitWatch XDH Fitness Smart Watch">
+        <h3>FitWatch XDH Fitness Smart Watch</h3>
+        <p class="price">$60.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="d:\Downloads\c837a6_112e04c98ae04664be02b1a8cf64e40f~mv2.avif" alt="Certified Pantony Buds Wireless Earbud Headphones">
+        <h3>Certified Pantony Buds Wireless Earbud Headphones</h3>
+        <p class="price">$55.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="d:\Downloads\c837a6_90cae3c00bab4834892d5ccda70547aa~mv2.avif" alt="Box Shape Silver Portable Bluetooth Speaker">
+        <h3>Box Shape Silver Portable Bluetooth Speaker</h3>
+        <p class="price">$65.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="d:\Downloads\c837a6_5ec10caf8823473ab09076016b5d5a8a~mv2.avif" alt="Corr Desktop 24GB Memory + 29_ Screen Keyboard & Mouse">
+        <h3>Corr Desktop 24GB Memory + 29_ Screen Keyboard & Mouse</h3>
+        <p class="price">$155.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+       <div class="product-card">
+        <img src="d:\Downloads\c837a6_42b69b7bd9ec4ab2885147ee7ac6f4f7~mv2.avif">
+        <h3>Drums Pro Wireless On-Ear Headphones</h3>
+        <p class="price">$155.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+       <div class="product-card">
+        <img src="d:\Downloads\c837a6_0c4625b023da4be79256d874cc7b12e2~mv2.avif">
+        <h3>JP - Space Tablet 10.4_ Wi-Fi 32GB</h3>
+        <p class="price">$155.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <footer>
+    <table class="tb">
+      <tr>
+        <th>About</th>
+        <th>Group Company</th>
+        <th>Help</th>
+        <th>Legal & Trust</th>
+      </tr>
+      <tr>
+        <td>Contact Us</td>
+        <td>Samsung</td>
+        <td>FAQs</td>
+        <td>Privacy Policy</td>
+      </tr>
+      <tr>
+        <td>About Us</td>
+        <td>Apple</td>
+        <td>Shipping & Returns</td>
+        <td>Terms of Service</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>One plus</td>
+        <td>Order Tracking</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Redmi</td>
+        <td>Payment Options</td>
+      </tr>
+    </table>
+
+  </footer>
+</body>
+
+</html>
