@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About Us - Ecommerce Website</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* MAIN GRID LAYOUT */
+        .site-container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "left main right"
+                "footer footer footer";
+
+            grid-template-columns: 220px 1fr 220px;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            grid-area: header;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            grid-area: header;
+            background: rgb(76, 231, 76);
+            padding: 15px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .navbar a:hover {
+            color: rgb(72, 0, 255);
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(to right, rgb(76, 231, 76), rgb(116, 255, 116));
+            padding: 70px 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hero-section button {
+            margin-top: 25px;
+            padding: 12px 24px;
+            background: rgb(72, 0, 255);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* STORY SECTION */
+        .story-section {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+        }
+
+        .story-text {
+            flex: 1;
+        }
+
+        .story-text h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .story-text p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .story-image {
+            flex: 1;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        /* FEATURES */
+        .features-section {
+            margin-bottom: 40px;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .features-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-card {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            color: rgb(72, 0, 255);
+        }
+
+        /* TEAM SECTION */
+        .team-section {
+            margin-bottom: 40px;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .team-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .team-card {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .team-card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .team-card p {
+            color: #777;
+        }
+
+        /* STATS */
+        .stats-section {
+            background: rgb(76, 231, 76);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: #f9f9f9;
+            padding: 60px 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .cta-section button {
+            background: rgb(72, 0, 255);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        footer {
+            grid-area: footer;
+            background: rgb(76, 231, 76);
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .tb {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .tb th {
+            padding-bottom: 15px;
+        }
+
+        .tb td {
+            padding: 8px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+
+            .site-container {
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "left"
+                    "right"
+                    "footer";
+
+                grid-template-columns: 1fr;
+            }
+
+            .story-section,
+            .features-container,
+            .team-container,
+            .stats-section {
+                flex-direction: column;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* FEEDBACK SECTION */
+
+        .feedback-section {
+            background: #f9f9f9;
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feedback-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feedback-section p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .feedback-form {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+        }
+
+        .feedback-form button {
+            width: 100%;
+            padding: 14px;
+            background: rgb(72, 0, 255);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .feedback-form button:hover {
+            background: rgb(50, 0, 200);
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background: #f9f9f9;
+            padding: 50px 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .faq-section p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item summary {
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: rgb(72, 0, 255);
+            user-select: none;
+            list-style: none;
+        }
+
+        .faq-item summary:hover {
+            background: #f0f0f0;
+        }
+
+        .faq-item summary::after {
+            content: "▼";
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: 0.3s transform;
+        }
+
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-item p {
+            padding: 20px;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+            background: #fafafa;
+        }
+
+        .footer1 {
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+            padding-top: 0px;
+        }
+
+        .bi-instagram {
+            padding: 3px;
+        }
+
+        .bi-facebook {
+            padding: 3px;
+        }
+
+        .bi-whatsapp {
+            padding: 3px;
+        }
+
+        .bi-twitter-x {
+            padding: 3px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+    <div class="site-container">
+
+        <!-- NAVBAR -->
+        <header class="navbar">
+
+            <div class="logo">Ecommerce Website</div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="productpage1.html">All Products</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Smart Home</a></li>
+                    <li><a href="#">Audio</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <button class="btn btn-primary ms-2 px-3 py-2 rounded-2">
+                    <a href="login.html" style="color: white; text-decoration: none;">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Login
+                    </a>
+                </button>
+                <button class="btn btn-primary ms-2 px-3 py-2 rounded-2">
+                    <i class="bi bi-cart-fill"></i>
+
+                    Cart
+                </button>
+            </div>
+
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HERO -->
+            <section class="hero-section">
+
+                <h1>About Our Store</h1>
+
+                <p>
+                    We provide premium gadgets, smart devices, and modern
+                    technology products with trusted quality and affordable prices.
+                    Our mission is to make technology simple and accessible for everyone.
+                </p>
+
+                <button>Explore Products</button>
+
+            </section>
+
+            <!-- STORY -->
+            <section class="story-section">
+
+                <div class="story-text">
+
+                    <h2>Our Story</h2>
+
+                    <p>
+                        Our ecommerce journey started with a simple goal:
+                        delivering high-quality technology products at fair prices.
+                        From smartphones and smartwatches to laptops and accessories,
+                        we focus on providing products that improve everyday life.
+                        We believe shopping should be easy, secure, and enjoyable.
+                    </p>
+
+                </div>
+
+                <div class="story-image">
+
+                    <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+                        alt="Our Store">
+
+                </div>
+
+            </section>
+
+            <!-- FEATURES -->
+            <section class="features-section">
+
+                <h2>Why Choose Us</h2>
+
+                <div class="features-container">
+
+                    <div class="feature-card">
+                        <h3>Fast Delivery</h3>
+                        <p>
+                            We provide secure and fast delivery services
+                            across multiple locations.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Best Prices</h3>
+                        <p>
+                            Get premium quality gadgets at smart and affordable prices.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Trusted Products</h3>
+                        <p>
+                            All our products are genuine and quality tested.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CTA -->
+            <section class="cta-section">
+
+                <h2>Start Shopping Today</h2>
+
+                <p>
+                    Discover premium gadgets and modern technology products
+                    with amazing deals and fast delivery.
+                </p>
+
+                <button>Shop Now</button>
+
+            </section>
+
+            <!-- FAQ SECTION -->
+            <section class="faq-section">
+
+                <h2>Frequently Asked Questions</h2>
+
+                <p>Find answers to common questions about our products and services.</p>
+
+                <div class="faq-container">
+
+                    <details class="faq-item">
+                        <summary>How do I track my order?</summary>
+                        <p>Once your order is placed, you'll receive a tracking number via email. You can use this
+                            number to track your shipment in real-time on our website or the carrier's portal. Tracking
+                            updates are sent automatically.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What is your return policy?</summary>
+                        <p>We offer a 30-day return policy on most products. Items must be in original condition with
+                            packaging intact. Simply contact our customer service team to initiate a return. We'll
+                            provide you with a prepaid shipping label.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Are all products genuine?</summary>
+                        <p>Yes, all products are 100% genuine and sourced directly from authorized distributors. Each
+                            item is quality tested before shipment. We provide authenticity certification for high-value
+                            products.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Do you offer international shipping?</summary>
+                        <p>We currently ship to select countries in Asia and Europe. Shipping costs and delivery times
+                            vary by location. Please check the shipping details at checkout to see if we deliver to your
+                            area.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What payment methods do you accept?</summary>
+                        <p>We accept credit cards (Visa, Mastercard, American Express), debit cards, UPI, net banking,
+                            and digital wallets. All payments are encrypted and secure using SSL technology.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Is my personal information secure?</summary>
+                        <p>Yes, we use industry-standard encryption and security protocols to protect your personal and
+                            payment information. Your data is never shared with third parties. Please review our Privacy
+                            Policy for more details.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>How long does delivery usually take?</summary>
+                        <p>Standard delivery takes 5-7 business days, while express delivery is available for 2-3
+                            business days. Delivery times may vary based on location and product availability. Free
+                            shipping is available on orders above $50.</p>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>What warranty do products come with?</summary>
+                        <p>Most products come with manufacturer warranty ranging from 1-2 years. Extended warranty
+                            options are available for selected items. You can register your product on our website to
+                            activate the warranty.</p>
+                    </details>
+
+                </div>
+
+            </section>
+
+            <section class="feedback-section">
+
+                <h2>Send Us Your Feedback</h2>
+
+                <p>
+                    We'd love to hear your thoughts, suggestions, and experience with our store.
+                </p>
+
+                <form class="feedback-form">
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Your Feedback</label>
+                        <textarea rows="6" placeholder="Write your feedback here"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Rate Our Service</label>
+
+                        <select>
+                            <option>⭐⭐⭐⭐⭐ Excellent</option>
+                            <option>⭐⭐⭐⭐ Good</option>
+                            <option>⭐⭐⭐ Average</option>
+                            <option>⭐⭐ Poor</option>
+                            <option>⭐ Very Poor</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Submit Feedback</button>
+
+                </form>
+
+            </section>
+        </main>
+
+        <!-- FEEDBACK SECTION -->
+
+        <!-- FOOTER -->
+        <footer>
+            <footer>
+                <div class="footer1">
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-whatsapp"></i>
+                    <i class="bi bi-twitter-x"></i>
+                    <p style="text-align: center;">&copy;Copyright All rights reserved</p>
+                </div>
+            </footer>
+            <table class="tb">
+                <tr>
+                    <th>About</th>
+                    <th>Group Company</th>
+                    <th>Help</th>
+                    <th>Legal & Trust</th>
+                </tr>
+                <tr>
+                    <td>Contact Us</td>
+                    <td>Samsung</td>
+                    <td>FAQs</td>
+                    <td>Privacy Policy</td>
+                </tr>
+                <tr>
+                    <td>About Us</td>
+                    <td>Apple</td>
+                    <td>Shipping & Returns</td>
+                    <td>Terms of Service</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One plus</td>
+                    <td>Order Tracking</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Redmi</td>
+                    <td>Payment Options</td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+
+</html>
