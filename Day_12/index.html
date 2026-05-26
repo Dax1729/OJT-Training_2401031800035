@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VintageVault — Rare Tech & Dev Artifacts</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+  <header class="flex-row">
+    <!-- NAV -->
+    <nav class="nav flex items-center justify-between p-4">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">[</span>VintageVault<span class="logo-bracket">]</span>
+      </a>
+      <ul class="nav-links hidden md:flex items-center space-x-6">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="catalog.html" class="nav-cta hidden md:inline-block">Browse Archive</a>
+      <button class="hamburger block md:hidden" id="hamburger">&#9776;</button>
+    </nav>
+  
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu hidden flex-col space-y-4 p-4" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">VINTAGE</div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 1978 · Rare Technology Artifacts</p>
+      <h1 class="hero-title">Where Machines<br /><em>Remember</em></h1>
+      <p class="hero-sub">Curated vintage computers, dev tools, synthesizers, and engineering relics — sourced, restored, and archived for the discerning collector.</p>
+      <div class="hero-actions">
+        <a href="catalog.html" class="btn-primary">Explore Catalog</a>
+        <a href="about.html" class="btn-ghost">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-bar flex items-center gap-2">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">vault_init.sh</span>
+      </div>
+      <div class="terminal-body" id="terminalBody"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track flex items-center gap-6">
+      <span>Apple IIe ·</span><span>PDP-11 ·</span><span>Commodore 64 ·</span><span>IBM Model M ·</span><span>Altair 8800 ·</span><span>NeXT Cube ·</span><span>DEC VAX ·</span><span>Osborne 1 ·</span><span>TRS-80 ·</span><span>SGI Workstation ·</span>
+      <span>Apple IIe ·</span><span>PDP-11 ·</span><span>Commodore 64 ·</span><span>IBM Model M ·</span><span>Altair 8800 ·</span><span>NeXT Cube ·</span><span>DEC VAX ·</span><span>Osborne 1 ·</span><span>TRS-80 ·</span><span>SGI Workstation ·</span>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <section class="section" id="featured">
+    <div class="section-header">
+      <span class="section-tag">// featured items</span>
+      <h2>Recently Acquired</h2>
+    </div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="Vintage circuit board" class="card-img" />
+          <span class="card-badge">Rare</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Microcomputer · 1981</span>
+          <h3>IBM PC 5150</h3>
+          <p>The machine that started it all. Original unit with matching keyboard and documentation. Fully operational.</p>
+          <div class="card-footer">
+            <span class="card-price">$1,840</span>
+            <a href="catalog.html" class="card-btn">View Item</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-featured">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80" alt="Old computer screen with code" class="card-img" />
+          <span class="card-badge badge-gold">Staff Pick</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Workstation · 1990</span>
+          <h3>NeXT Cube</h3>
+          <p>Steve Jobs' magnum opus between Apple stints. The machine that birthed the World Wide Web. Museum quality.</p>
+          <div class="card-footer">
+            <span class="card-price">$4,200</span>
+            <a href="catalog.html" class="card-btn">View Item</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" alt="Matrix code terminal" class="card-img" />
+          <span class="card-badge">Restored</span>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Terminal · 1978</span>
+          <h3>DEC VT100</h3>
+          <p>The ANSI terminal that defined the standard. This unit shaped how we interact with machines to this day.</p>
+          <div class="card-footer">
+            <span class="card-price">$680</span>
+            <a href="catalog.html" class="card-btn">View Item</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="section-cta">
+      <a href="catalog.html" class="btn-outline">View All 200+ Items →</a>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip flex items-center justify-center gap-8">
+    <div class="stat flex flex-col item-center justify-center gap-8"><span class="stat-num">200+</span><span class="stat-label">Catalogued Items</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat flex flex-col item-center justify-center gap-8"><span class="stat-num">40yrs</span><span class="stat-label">Coverage Span</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat flex flex-col item-center justify-center gap-8"><span class="stat-num">98%</span><span class="stat-label">Items Operational</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat flex flex-col item-center justify-center gap-8"><span class="stat-num">1,200+</span><span class="stat-label">Happy Collectors</span></div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section bg-dark">
+    <div class="section-header light">
+      <span class="section-tag">// browse by type</span>
+      <h2>The Archive</h2>
+    </div>
+    <div class="categories-grid">
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9672;</div>
+        <h4>Microcomputers</h4>
+        <p>Apple, Commodore, Sinclair, Tandy &amp; more</p>
+        <span class="cat-count">54 items</span>
+      </a>
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9670;</div>
+        <h4>Workstations</h4>
+        <p>SGI, Sun, NeXT, DEC, HP — engineering iron</p>
+        <span class="cat-count">32 items</span>
+      </a>
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9724;</div>
+        <h4>Input Devices</h4>
+        <p>Keyboards, mice, digitizers, light pens</p>
+        <span class="cat-count">47 items</span>
+      </a>
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9650;</div>
+        <h4>Dev Tools</h4>
+        <p>Assemblers, punch cards, oscilloscopes</p>
+        <span class="cat-count">41 items</span>
+      </a>
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9679;</div>
+        <h4>Storage Media</h4>
+        <p>Magnetic tape, floppy, drum &amp; disc</p>
+        <span class="cat-count">38 items</span>
+      </a>
+      <a href="catalog.html" class="cat-card">
+        <div class="cat-icon">&#9632;</div>
+        <h4>Ephemera</h4>
+        <p>Manuals, schematics, vintage software</p>
+        <span class="cat-count">29 items</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="section testimonial-section">
+    <div class="testimonial-inner">
+      <blockquote>
+        <p>"VintageVault is the only place I trust for machines with provenance. My PDP-11 arrived with original documentation and has run flawlessly since 1974."</p>
+        <cite>— Dr. Margaret Hollis, Systems Archaeologist, MIT</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <span class="section-tag">// stay in the loop</span>
+      <h2>New acquisitions, monthly</h2>
+      <p>Join 3,000+ collectors who get early access to rare arrivals.</p>
+      <form class="newsletter-form flex" onsubmit="return handleNewsletter(event)">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Just machines.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo"><span class="logo-bracket">[</span>VintageVault<span class="logo-bracket">]</span></span>
+        <p>Preserving the artefacts of computing history since 1998.</p>
+      </div>
+      <div class="footer-links-group">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links-group">
+        <h5>Catalog</h5>
+        <a href="catalog.html">Microcomputers</a>
+        <a href="catalog.html">Workstations</a>
+        <a href="catalog.html">Input Devices</a>
+        <a href="catalog.html">Dev Tools</a>
+      </div>
+      <div class="footer-links-group">
+        <h5>Policies</h5>
+        <a href="#">Authenticity Guarantee</a>
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom flex justify-between items-center">
+      <span>© 2025 VintageVault. All rights reserved.</span>
+      <span class="footer-mono">// commit: a4f8d21</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
