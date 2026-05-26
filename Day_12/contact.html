@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — VintageVault</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span class="logo-bracket">[</span>VintageVault<span class="logo-bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="catalog.html" class="nav-cta">Browse Archive</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-header">
+    <p class="hero-eyebrow">// reach out</p>
+    <h1>Get in Touch</h1>
+    <p>Questions, acquisition inquiries, or just want to talk machines — we're here.</p>
+  </div>
+
+  <!-- CONTACT GRID -->
+  <section class="section contact-section">
+    <div class="contact-grid">
+
+      <!-- FORM -->
+      <div class="contact-form-wrap">
+        <h3>Send a Message</h3>
+        <form class="contact-form" id="contactForm" onsubmit="return handleContact(event)">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Margaret" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Hollis" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="margaret@mit.edu" required />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option value="">Select a topic</option>
+              <option value="purchase">Purchase Inquiry</option>
+              <option value="sell">Selling an Item</option>
+              <option value="appraisal">Appraisal Request</option>
+              <option value="restoration">Restoration Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="6" placeholder="Tell us about the machine you're looking for, or the item you'd like to sell..." required></textarea>
+          </div>
+
+          <div class="form-group form-attach">
+            <label for="attachment">Attach photos (optional)</label>
+            <input type="file" id="attachment" accept="image/*" multiple />
+            <span class="attach-note">JPG, PNG up to 10MB each. Helpful for selling inquiries.</span>
+          </div>
+
+          <button type="submit" class="btn-primary full-width">Send Message ↗</button>
+        </form>
+
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <div class="success-icon">✓</div>
+          <h3>Message Received</h3>
+          <p>We typically respond within one business day. If your inquiry is time-sensitive, call us directly.</p>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h4>// location</h4>
+          <p>VintageVault Archive<br />
+          14 Brunel Way, Unit 6<br />
+          Bristol, BS1 4RD<br />
+          United Kingdom</p>
+          <p class="info-note">Open by appointment only. Please contact us before visiting.</p>
+        </div>
+
+        <div class="info-card">
+          <h4>// contact</h4>
+          <p><strong>Email:</strong> hello@vintagevault.co</p>
+          <p><strong>Phone:</strong> +44 117 900 4782</p>
+          <p><strong>Hours:</strong> Mon–Fri, 9am–5pm GMT</p>
+        </div>
+
+        <div class="info-card">
+          <h4>// response times</h4>
+          <div class="response-times">
+            <div class="rt-row"><span>General enquiries</span><span class="rt-time">1–2 days</span></div>
+            <div class="rt-row"><span>Purchase inquiries</span><span class="rt-time">Same day</span></div>
+            <div class="rt-row"><span>Selling / appraisal</span><span class="rt-time">2–3 days</span></div>
+            <div class="rt-row"><span>Restoration work</span><span class="rt-time">3–5 days</span></div>
+          </div>
+        </div>
+
+        <div class="info-card info-card-dark">
+          <h4>// selling to us</h4>
+          <p>We're always interested in acquiring items. Send photos and serial numbers for a preliminary assessment. We cover shipping costs for items we choose to acquire.</p>
+          <a href="#" class="btn-ghost small" onclick="document.getElementById('subject').value='sell'">Start Sell Inquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-dark">
+    <div class="section-header light">
+      <span class="section-tag">// common questions</span>
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Do you ship internationally?</h4>
+        <p>Yes — we've shipped to 60+ countries. Every item ships in custom wooden crating with full insurance. We handle all customs documentation.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What's your authenticity guarantee?</h4>
+        <p>Every item comes with a signed Certificate of Authenticity. If an item is found to be inauthentic within 5 years, we offer a full refund.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I visit the archive?</h4>
+        <p>Yes, by appointment. We welcome collectors, researchers, and institutions. Contact us to arrange a visit to our Bristol facility.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you do restoration work?</h4>
+        <p>We offer restoration services for items already in our inventory. For externally owned items, we do selective consultation on a case-by-case basis.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Are payment plans available?</h4>
+        <p>For items over £1,000, we offer staged payment arrangements for verified collectors. Contact us to discuss terms.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you work with museums?</h4>
+        <p>Yes — we have active relationships with several national computing museums and can arrange institutional pricing and long-term loans.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo"><span class="logo-bracket">[</span>VintageVault<span class="logo-bracket">]</span></span>
+        <p>Preserving the artefacts of computing history since 1998.</p>
+      </div>
+      <div class="footer-links-group">
+        <h5>Navigate</h5>
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 VintageVault. All rights reserved.</span>
+      <span class="footer-mono">// commit: a4f8d21</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

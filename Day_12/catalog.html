@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog — VintageVault</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span class="logo-bracket">[</span>VintageVault<span class="logo-bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html" class="active">Catalog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="catalog.html" class="nav-cta">Browse Archive</a>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Catalog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="hero-eyebrow">// 200+ authenticated items</p>
+    <h1>The Archive</h1>
+    <p>Every machine, tool, and artefact — sourced, restored, and documented.</p>
+  </div>
+
+  <!-- CATALOG BODY -->
+  <div class="catalog-layout">
+
+    <!-- SIDEBAR FILTERS -->
+    <aside class="catalog-sidebar">
+      <h4>Filter</h4>
+
+      <div class="filter-group">
+        <label class="filter-label">Category</label>
+        <div class="filter-options" id="catFilter">
+          <button class="filter-btn active" data-cat="all">All</button>
+          <button class="filter-btn" data-cat="microcomputer">Microcomputers</button>
+          <button class="filter-btn" data-cat="workstation">Workstations</button>
+          <button class="filter-btn" data-cat="input">Input Devices</button>
+          <button class="filter-btn" data-cat="devtool">Dev Tools</button>
+          <button class="filter-btn" data-cat="storage">Storage Media</button>
+          <button class="filter-btn" data-cat="ephemera">Ephemera</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Condition</label>
+        <div class="filter-options">
+          <button class="filter-btn active" data-cond="all">All</button>
+          <button class="filter-btn" data-cond="museum">Museum Quality</button>
+          <button class="filter-btn" data-cond="restored">Restored</button>
+          <button class="filter-btn" data-cond="working">Working</button>
+          <button class="filter-btn" data-cond="display">Display Only</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Price Range</label>
+        <div class="price-range">
+          <input type="range" min="0" max="10000" value="10000" id="priceRange" />
+          <span class="price-output">Up to $<span id="priceVal">10,000</span></span>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">Era</label>
+        <div class="filter-options">
+          <button class="filter-btn active" data-era="all">All Eras</button>
+          <button class="filter-btn" data-era="1960s">1960s</button>
+          <button class="filter-btn" data-era="1970s">1970s</button>
+          <button class="filter-btn" data-era="1980s">1980s</button>
+          <button class="filter-btn" data-era="1990s">1990s</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CATALOG GRID -->
+    <div class="catalog-main">
+      <div class="catalog-topbar">
+        <span class="catalog-count">Showing <strong>12</strong> items</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="newest">Newest Arrivals</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+
+      <div class="catalog-grid" id="catalogGrid">
+
+        <div class="catalog-card" data-cat="microcomputer" data-price="1840" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80" alt="Circuit board" class="card-img" />
+            <span class="card-badge">Rare</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Microcomputer · 1981</span>
+            <h3>IBM PC 5150</h3>
+            <p>Original unit. All peripherals present. Boots from original DOS 1.0 floppy.</p>
+            <div class="card-footer">
+              <span class="card-price">$1,840</span>
+              <button class="card-btn" onclick="openModal('IBM PC 5150', '$1,840', '1981', 'Microcomputer', 'The machine that started the personal computing revolution. This original IBM PC 5150 includes original keyboard, CGA monitor adapter, and complete documentation set. Fully operational — boots DOS 1.0 from original floppy disks. Serial number verified.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="workstation" data-price="4200" data-era="1990s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&q=80" alt="Code on screen" class="card-img" />
+            <span class="card-badge badge-gold">Staff Pick</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Workstation · 1990</span>
+            <h3>NeXT Cube</h3>
+            <p>Steve Jobs' opus after Apple. The machine that birthed the World Wide Web. Museum quality.</p>
+            <div class="card-footer">
+              <span class="card-price">$4,200</span>
+              <button class="card-btn" onclick="openModal('NeXT Cube', '$4,200', '1990', 'Workstation', 'Steve Jobs designed this cube after leaving Apple. Tim Berners-Lee used a NeXT Cube to create the World Wide Web. This unit is in museum-grade condition with the original MagnetoOptical drive, keyboard, and NeXT monitor. NEXTSTEP 3.3 installed and running.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="input" data-price="680" data-era="1970s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&q=80" alt="Terminal screen" class="card-img" />
+            <span class="card-badge">Restored</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Terminal · 1978</span>
+            <h3>DEC VT100</h3>
+            <p>The ANSI terminal that defined the standard. Fully recapped, cleaned, and operational.</p>
+            <div class="card-footer">
+              <span class="card-price">$680</span>
+              <button class="card-btn" onclick="openModal('DEC VT100', '$680', '1978', 'Terminal / Input', 'The VT100 defined ANSI escape sequences used in terminals to this day. This unit has been fully recapped with new electrolytic capacitors, the CRT phosphor is bright and sharp, and all keyboard switches have been cleaned. Ships with original cable.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="microcomputer" data-price="320" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?w=500&q=80" alt="Old technology" class="card-img" />
+            <span class="card-badge">Working</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Microcomputer · 1982</span>
+            <h3>Commodore 64</h3>
+            <p>The best-selling personal computer of all time. Complete with power supply and datasette.</p>
+            <div class="card-footer">
+              <span class="card-price">$320</span>
+              <button class="card-btn" onclick="openModal('Commodore 64', '$320', '1982', 'Microcomputer', 'The best-selling personal computer model ever made — 17 million units sold. This breadbin-style C64 includes the original power supply, datasette, and a collection of original game cartridges. SID chip tested and producing full sound. Cosmetically excellent.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="devtool" data-price="2100" data-era="1970s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Vintage electronics" class="card-img" />
+            <span class="card-badge badge-gold">Museum Quality</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Dev Tool · 1975</span>
+            <h3>Altair 8800</h3>
+            <p>The machine that inspired Gates and Allen to write BASIC. A foundational computing artefact.</p>
+            <div class="card-footer">
+              <span class="card-price">$2,100</span>
+              <button class="card-btn" onclick="openModal('Altair 8800', '$2,100', '1975', 'Dev Tool / Microcomputer', 'The Altair 8800 sparked the personal computing revolution. Bill Gates and Paul Allen wrote the first commercially successful microcomputer software for this machine. This unit is in full working order with front panel lights operational. Comes with original documentation and MITS literature.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="storage" data-price="95" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=500&q=80" alt="Floppy disks" class="card-img" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Storage · 1984</span>
+            <h3>5.25" Floppy Lot</h3>
+            <p>Sealed box of 10 Verbatim DS/DD disks. New-old-stock. Never opened.</p>
+            <div class="card-footer">
+              <span class="card-price">$95</span>
+              <button class="card-btn" onclick="openModal('5.25 Floppy Disk Lot', '$95', '1984', 'Storage Media', 'Factory-sealed box of 10 Verbatim DataLife 5.25-inch DS/DD floppy disks. New-old-stock, never opened. These are genuine 1984 production units, not reproductions. Perfect for collectors or for use with period-appropriate hardware.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="workstation" data-price="3500" data-era="1990s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=500&q=80" alt="Programming" class="card-img" />
+            <span class="card-badge">Rare</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Workstation · 1992</span>
+            <h3>SGI Indigo²</h3>
+            <p>Hollywood's GPU. Rendered Jurassic Park dinosaurs. R4400 processor, 256MB RAM.</p>
+            <div class="card-footer">
+              <span class="card-price">$3,500</span>
+              <button class="card-btn" onclick="openModal('SGI Indigo²', '$3,500', '1992', 'Workstation', 'Silicon Graphics Indigo² with IMPACT graphics subsystem — the same hardware used to render Jurassic Park and Terminator 2. R4400 at 150MHz, 256MB RAM, 4GB SCSI disk. IRIX 6.5 installed. Full OpenGL hardware acceleration working. Extremely rare in this condition.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="input" data-price="450" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=500&q=80" alt="Keyboard" class="card-img" />
+            <span class="card-badge">Restored</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Input Device · 1985</span>
+            <h3>IBM Model M</h3>
+            <p>The legendary buckling-spring keyboard. Fully cleaned, restored, and clicky as the day it left Lexington.</p>
+            <div class="card-footer">
+              <span class="card-price">$450</span>
+              <button class="card-btn" onclick="openModal('IBM Model M Keyboard', '$450', '1985', 'Input Device', 'The IBM Model M is considered by many to be the finest keyboard ever manufactured. This 1985 Lexington, Kentucky-produced unit has been fully disassembled, cleaned, and the bolt-modification applied for improved stability. Every key functions. The buckling spring mechanism is crisp and satisfying.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="microcomputer" data-price="780" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80" alt="Laptop computer" class="card-img" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Portable · 1981</span>
+            <h3>Osborne 1</h3>
+            <p>The first commercially successful portable computer. Complete with original carrying case.</p>
+            <div class="card-footer">
+              <span class="card-price">$780</span>
+              <button class="card-btn" onclick="openModal('Osborne 1', '$780', '1981', 'Portable Computer', 'The Osborne 1 was the first commercially successful portable computer, weighing 24.5 pounds. This unit includes the original carrying case, both 5.25-inch floppy drives functional, Z80 processor, and the bundled software package including WordStar and SuperCalc.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="ephemera" data-price="175" data-era="1970s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80" alt="Books and manuals" class="card-img" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Ephemera · 1972</span>
+            <h3>Unix V6 Manual</h3>
+            <p>Original Bell Labs Unix Programmer's Manual, 6th Edition. Good condition with light wear.</p>
+            <div class="card-footer">
+              <span class="card-price">$175</span>
+              <button class="card-btn" onclick="openModal('Unix V6 Programmer\'s Manual', '$175', '1972', 'Ephemera / Documentation', 'Original Bell Laboratories Unix Programmer\'s Manual, 6th Edition (V6). This is the manual that shipped with the first widely-distributed version of Unix. Authored by Ken Thompson and Dennis Ritchie. Good condition with light handling wear to cover. Pages clean and legible throughout.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="devtool" data-price="890" data-era="1970s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&q=80" alt="Developer workspace" class="card-img" />
+            <span class="card-badge badge-gold">Museum Quality</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Dev Tool · 1977</span>
+            <h3>HP-35 Calculator</h3>
+            <p>HP's first scientific calculator. The machine that killed the slide rule. With original leather case.</p>
+            <div class="card-footer">
+              <span class="card-price">$890</span>
+              <button class="card-btn" onclick="openModal('HP-35 Scientific Calculator', '$890', '1977', 'Dev Tool', 'The HP-35 was the world\'s first scientific pocket calculator and the device that made the slide rule obsolete. This later-production unit includes the original leather case, charging stand, and quick reference card. Battery replaced with modern equivalent. All functions operational.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="catalog-card" data-cat="microcomputer" data-price="540" data-era="1980s">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500&q=80" alt="Old computer" class="card-img" />
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Microcomputer · 1984</span>
+            <h3>Apple IIc</h3>
+            <p>Apple's compact home computer. Complete with original box, monitor, and IIc stand.</p>
+            <div class="card-footer">
+              <span class="card-price">$540</span>
+              <button class="card-btn" onclick="openModal('Apple IIc', '$540', '1984', 'Microcomputer', 'The Apple IIc was Apple\'s attempt at a truly portable home computer. This unit includes the original retail box (excellent condition), Apple Monitor IIc, the optional Apple IIc stand, and a collection of original Apple software on 5.25-inch floppy. The IIc boots cleanly and runs all software tested.')">Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ITEM MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-content">
+        <span class="modal-tag" id="modalTag"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p id="modalDesc"></p>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="closeModal()">Inquire to Purchase</button>
+          <button class="btn-ghost" onclick="closeModal()">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <span>© 2025 VintageVault. All rights reserved.</span>
+      <span class="footer-mono">// commit: a4f8d21</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
